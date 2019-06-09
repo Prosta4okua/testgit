@@ -220,9 +220,9 @@ public class Mechs implements ContentList{
             {
                 drillPower = 4;
                 mineSpeed = 5f;
-                speed = 5f;
+                speed = 2f;
                 drag = 0.09f;
-                health = 200f;
+                health = 2000f;
                 weaponOffsetX = -1;
                 weaponOffsetY = -1;
                 engineColor = Pal.lightTrail;

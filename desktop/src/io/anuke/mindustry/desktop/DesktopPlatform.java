@@ -78,26 +78,26 @@ public class DesktopPlatform extends Platform{
         DiscordRichPresence presence = new DiscordRichPresence();
 
         if(!state.is(State.menu)){
-            presence.state = state.rules.pvp ? "PvP" : state.rules.waves ? "Survival" : "Attack";
+            presence.state = state.rules.pvp ? "PvP" : state.rules.waves ? "Выживание" : "Атака";
             if(world.getMap() == null){
-                presence.details = "Unknown Map";
+                presence.details = "Неизвестная карта";
             }else if(!state.rules.waves){
                 presence.details = Strings.capitalize(world.getMap().name());
             }else{
-                presence.details = Strings.capitalize(world.getMap().name()) + " | Wave " + state.wave;
-                presence.largeImageText = "Wave " + state.wave;
+                presence.details = Strings.capitalize(world.getMap().name()) + " | Волна " + state.wave;
+                presence.largeImageText = "Волна " + state.wave;
             }
 
             if(Net.active() && playerGroup.size() > 1){
-                presence.state = (state.rules.pvp ? "PvP | " : "") + playerGroup.size() + " Players";
+                presence.state = (state.rules.pvp ? "PvP | " : "") + playerGroup.size() + " Игроков";
             }else if(state.rules.waves){
-                presence.state = "Survival";
+                presence.state = "Выживание";
             }
         }else{
             if(ui.editor != null && ui.editor.isShown()){
-                presence.state = "In Editor";
+                presence.state = "В редакторе";
             }else{
-                presence.state = "In Menu";
+                presence.state = "В меню";
             }
         }
 
